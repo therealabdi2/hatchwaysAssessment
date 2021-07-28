@@ -1,5 +1,6 @@
 import asyncio
 import time
+
 import aiohttp
 
 posts = {
@@ -50,12 +51,11 @@ async def get_data(session, tag):
 asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 asyncio.run(main())
 
-result = []
+finalResult = []
 for result in results:
-    print(result)
+    finalResult += result
 
-
-# posts['posts'] = result
-# print(posts)
+posts['posts'] = finalResult
+print(posts)
 
 print("--- %s seconds ---" % (time.time() - start_time))
