@@ -55,7 +55,13 @@ finalResult = []
 for result in results:
     finalResult += result
 
-posts['posts'] = finalResult
+# remove duplicates
+finalResult = [i for n, i in enumerate(finalResult) if i not in finalResult[n + 1:]]
+
+list_to_be_sorted = finalResult
+sortedlist = sorted(list_to_be_sorted, key=lambda k: k['id'], reverse=False)
+
+posts['posts'] = sortedlist
 print(posts)
 
 print("--- %s seconds ---" % (time.time() - start_time))
