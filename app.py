@@ -18,6 +18,7 @@ def get_response():
 
 
 # Route 2 to get posts
+# http://127.0.0.1:5000/api/posts/?tags=history,tech,health,politics,science,design,startups,culture
 @app.route('/api/posts/')
 def get_posts():
     # getting the values from passed parameter
