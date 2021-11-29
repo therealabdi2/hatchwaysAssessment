@@ -8,7 +8,7 @@ app = Flask(__name__)
 requests_cache.install_cache(cache_name='hatchways_cache', backend='sqlite', expire_after=180)
 
 # The Api used to fetch blog data
-HATCHWAYS_URL = "https://api.hatchways.io/assessment/blog/posts"
+POSTS_URL = "https://api.hatchways.io/assessment/blog/posts"
 
 
 # Route 1
@@ -45,7 +45,7 @@ def get_posts():
             "tag": tag,
         }
         # Get all posts related to the specific tag
-        posts = requests.get(url=HATCHWAYS_URL, params=hatchways_params).json()['posts']
+        posts = requests.get(url=POSTS_URL, params=hatchways_params).json()['posts']
 
         # Combines all post into one list of dictionaries
         for post in posts:

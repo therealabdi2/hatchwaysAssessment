@@ -7,7 +7,7 @@ posts = {
     'posts': None
 }
 
-HATCHWAYS_URL = "https://api.hatchways.io/assessment/blog/posts"
+POSTS_URL = "https://api.hatchways.io/assessment/blog/posts"
 
 tags = ['history', 'tech', 'health', 'politics', 'science', 'design', 'startups', 'culture']
 
